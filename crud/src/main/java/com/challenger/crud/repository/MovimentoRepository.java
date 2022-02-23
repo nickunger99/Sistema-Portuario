@@ -19,4 +19,5 @@ public interface MovimentoRepository extends CrudRepository<Movimento, Long> {
 	@Query(value = "select u from Movimento u where u.tipo like %?1%")
 	List<Movimento> findByTiposMovimentos(String tipo);
 
+	
 }

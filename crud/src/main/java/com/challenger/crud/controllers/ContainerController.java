@@ -50,7 +50,7 @@ public class ContainerController {
 		attributes.addFlashAttribute("mensagem", "Container cadastrado com sucesso!");
 		return "redirect:/cadastrarContainer";
 	}
-
+	
 	// GET que lista containers
 	@RequestMapping("/containers")
 	public ModelAndView listaContainers() {
@@ -141,8 +141,7 @@ public class ContainerController {
 		return "redirect:/detalhes-container/" + codigo;
 	
 	}
-	
-	
+
 	
 	
 }
