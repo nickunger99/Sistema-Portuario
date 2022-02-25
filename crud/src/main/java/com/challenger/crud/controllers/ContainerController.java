@@ -75,6 +75,21 @@ public class ContainerController {
 			return mv;
 
 		}
+		
+		// GET relatorio de movimentos e detalhes dos containers
+		@RequestMapping("/relatorio-container/{id}")
+		public ModelAndView relatorioContainer(@PathVariable("id") long id) {
+			Container container = cr.findById(id);
+			ModelAndView mv = new ModelAndView("container/relatorio-container");
+			mv.addObject("containers", container);
+
+			// lista de movimentos baseada no id do funcionário
+			Iterable<Movimento> movimentos = mr.findByContainer(container);
+			mv.addObject("movimentos", movimentos);
+
+			return mv;
+
+		}
 
 		// POST que adiciona movimento
 		@RequestMapping(value="/detalhes-container/{id}", method = RequestMethod.POST)
